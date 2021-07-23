@@ -25,9 +25,9 @@ i
 , substr(daykey, 9, 2) day
 , substr(daykey, 1,10) dt
 FROM  weather_t
-
-where dt >= '2020-12-28' and dt <= '2021-02-03'
-and substr(daykey, 1,10) >= '2021-01-01' and substr(daykey, 1,10) <= '2021-01-31'
+${WHERE}
+--where dt >= '2021-01-02' and dt <= '2021-01-10' and substr(daykey, 1,10) >= '2021-01-05' and substr(daykey, 1,10) <= '2021-01-07'
+--where dt >= '2020-12-28' and dt <= '2021-02-03' and substr(daykey, 1,10) >= '2021-01-01' and substr(daykey, 1,10) <= '2021-01-31'
 
 --and dt = '2021-01-01'
 ;
