@@ -6,8 +6,8 @@
 
 DATE=date
 FORMAT="%Y-%m-%d"
-start=`$DATE +$FORMAT -d "2021-07-13"`
-end=`$DATE +$FORMAT -d "2021-07-20"`
+start=`$DATE +$FORMAT -d "2021-07-17"`
+end=`$DATE +$FORMAT -d "2021-07-28"`
 #end=`$DATE +$FORMAT -d "2016-01-02"`
 now=$start
 while [[ "$now" < "$end" ]] ; do

@@ -4,8 +4,8 @@
 
 DATE=date
 FORMAT="%Y-%m-%d"
-start=`$DATE +$FORMAT -d "2015-08-01"`
-end=`$DATE +$FORMAT -d "2021-08-01"`
+start=`$DATE +$FORMAT -d "2021-07-15"`
+end=`$DATE +$FORMAT -d "2021-07-28"`
 #end=`$DATE +$FORMAT -d "2016-01-02"`
 now=`$DATE +$FORMAT -d "$start - 30 day"`
 #$start
