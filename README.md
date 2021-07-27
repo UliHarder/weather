@@ -11,7 +11,7 @@ go.
 ## First processing step
 
 The scripts `createTableWeatherProcessed.sql` creates a table that
-holds the observations as text rather JSON but keeps the parttioing by
+holds the observations as text rather JSON but keeps the partitioning by
 download day. The ingest is done by `ingestRawWeather.sh`. 
 
 ## Final processing step
@@ -20,12 +20,11 @@ In the next step the data is kept in a table created by
 `createTableWeatherPartitioned.sql` and the partitioning is done by
 day of observation. To get the `INSERT OVERWRITE` right and avoid
 deleting data we pick an observation day, write its partition and look
-at the files downloaded two days before and afer.
+at the files downloaded two days before and afer. This is done in the script `ingestProcessedWeather.sh`.
 
-## Future
+## Regular downloads
 
-We need to adapt `weather_download.sh` to do this as the data is
-downloaded.
+The script `pipeline.sh` puts the data regularly into HDFS and HIVE.
 
 
 ## Links
