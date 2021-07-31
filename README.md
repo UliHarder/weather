@@ -26,6 +26,10 @@ at the files downloaded two days before and afer. This is done in the script `in
 
 The script `pipeline.sh` puts the data regularly into HDFS and HIVE.
 
+## A plot of the latest data  
+
+To keep an eye on the progress of the we plot the last 7 days of weather for Benson with the R script 
+![The UK](R/benson.png?raw=true "The UK")
 
 ## Links
 
