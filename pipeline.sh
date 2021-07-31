@@ -114,10 +114,24 @@ echo $where
 
 hive --hivevar WHERE="$where" -f ingestProcessedWeather.sql
 
+# make a plot
+
+LASTWEEK=`$DATECMD +$FORMAT -d "$DT - 7 day"`
+where=" where dt >= '"$LASTWEEK"' " 
+hive --hivevar WHERE="$where" -f query_benson.sql > R/latest_weather.csv
+
+cd R
+
+/usr/local/bin/Rscript makeGraph.R
+
+cd ..
+
+git add R/benson.png
+DATE=`date +%Y-%m-%d-%H-%M`
+git commit -m "plot update on $DATE"
+git push origin master
 
 
-
-# end
 
 
 exit
