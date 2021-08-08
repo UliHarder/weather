@@ -8,7 +8,7 @@ The regular ingests create a plot for observations from the station in Benson.
 
 ## Raw data ingest
 
-The  script [createTableWeatherRawPartioned.sql](createTableWeatherRawPartioned.sql) creates a HIVE table
+The  script [`createTableWeatherRawPartioned.sql`](createTableWeatherRawPartioned.sql) creates a HIVE table
 that can hold the JSON observations we have been downloading daily in
 the last few years. We populate it with the script `addFile.sh` one at
 a time. This would be faster by copying all files for one day in one
@@ -45,9 +45,4 @@ http://pimaster:50070/
 http://pimaster:8088/
 https://pimaster:9090/
 
-JSON SERDE
 
-
-
-Attempt to get the time line server running
-sudo apt-get install libjinput-java libjinput-java-doc libjinput-jni
