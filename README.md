@@ -1,5 +1,7 @@
 # weather
 
+I have been downloading for a number of year now obesrvation data from the [Metoffice datapoint service](https://www.metoffice.gov.uk/services/data/datapoint) in JSON format. After trying to decode the data with R and Python, I finally settled on using HIVE running on a [Hadoop cluster](https://uliharder.wordpress.com/r/1084-2/). Long term my plan is to explore using mySQL as the latest version also cope with JSON documents. Using trial and error I found that this [table definition](createTableWeatherRawPartioned.sql) interprets the data correctly.
+
 ## Raw data ingest
 
 The script `createTableWeatherRawPartioned.sql` creates a HIVE table
