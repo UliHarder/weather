@@ -23,7 +23,7 @@ download day. The ingest is done by [`ingestRawWeather.sh`](ingestRawWeather.sh)
 ## Final processing step
 
 In the next step the data is kept in a table created by
-[`createTableWeatherPartitioned.sql`](createTableWeatherPartitioned.sql} and the partitioning is done by
+[`createTableWeatherPartitioned.sql`](createTableWeatherPartitioned.sql) and the partitioning is done by
 day of observation. To get the `INSERT OVERWRITE` right and avoid
 deleting data we pick an observation day, write its partition and look
 at the files downloaded two days before and afer. This is done in the script [`ingestProcessedWeather.sh`](ingestProcessedWeather.sh).
