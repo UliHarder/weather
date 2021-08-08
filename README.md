@@ -10,39 +10,32 @@ The regular ingests create a plot for observations from the station in Benson.
 
 The  script [`createTableWeatherRawPartioned.sql`](createTableWeatherRawPartioned.sql) creates a HIVE table
 that can hold the JSON observations we have been downloading daily in
-the last few years. We populate it with the script `addFile.sh` one at
+the last few years. We populate it with the script [`addFile.sh`](addFile.sh) one at
 a time. This would be faster by copying all files for one day in one
 go. 
 
 ## First processing step
 
-The scripts `createTableWeatherProcessed.sql` creates a table that
+The script [`createTableWeatherProcessed.sql`](createTableWeatherProcessed.sql) creates a table that
 holds the observations as text rather JSON but keeps the partitioning by
-download day. The ingest is done by `ingestRawWeather.sh`. 
+download day. The ingest is done by [`ingestRawWeather.sh`](ingestRawWeather.sh). 
 
 ## Final processing step
 
 In the next step the data is kept in a table created by
-`createTableWeatherPartitioned.sql` and the partitioning is done by
+[`createTableWeatherPartitioned.sql`](createTableWeatherPartitioned.sql} and the partitioning is done by
 day of observation. To get the `INSERT OVERWRITE` right and avoid
 deleting data we pick an observation day, write its partition and look
-at the files downloaded two days before and afer. This is done in the script `ingestProcessedWeather.sh`.
+at the files downloaded two days before and afer. This is done in the script [`ingestProcessedWeather.sh`](ingestProcessedWeather.sh).
 
 ## Regular downloads
 
-The script `pipeline.sh` puts the data regularly into HDFS and HIVE.
+The script [`pipeline.sh`](pipeline.sh) puts the data regularly into HDFS and HIVE.
 
 ## A plot of the latest data  
 
 To keep an eye on the progress of the we plot the last 7 days of weather for Benson with the R script 
 ![The UK](R/benson.png?raw=true "The UK")
 
-## Links
-
-
-
-http://pimaster:50070/
-http://pimaster:8088/
-https://pimaster:9090/
 
 
